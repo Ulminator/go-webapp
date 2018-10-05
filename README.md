@@ -37,5 +37,13 @@ Output
 {{ command1 command2 | command3 }}
     - The pipe passes the reuslt of previous command as last argument of next command.
 
+#### 3rd Party Routers
+- gorilla/mux
+    - Can do a lot, but sacrifice performance.
+- julienschmidt/httprouter
+    - Focused on speed above everything else.
+
+You need to inherit all behavior from base classes in a class based inheritance model, but often times you don’t want everything. Go's struct embedding allows more flexibility.
+
 export GOPATH=~/projects/go-webapp/
 go install src/example
