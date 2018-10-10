@@ -21,6 +21,7 @@ func (s1 standLocator) registerRoutes() {
 
 func (s1 standLocator) handleStandLocator(w http.ResponseWriter, r *http.Request) {
 	vm := viewmodel.NewStandLocator()
+	w.Header().Add("Content-Type", "text/html")
 	s1.standLocatorTemplate.Execute(w, vm)
 }
 
@@ -40,6 +41,7 @@ func (s1 standLocator) handleApiStands(w http.ResponseWriter, r *http.Request) {
 	log.Println("location:", loc)
 	vm := coords
 	enc := json.NewEncoder(w)
+	w.Header().Add("Content-Type", "application/json")
 	enc.Encode(vm)
 }
 
